@@ -79,3 +79,44 @@ Cada carpeta representa un microservicio independiente, con su propio:
 git clone https://github.com/tuusuario/biblioteca-microservicios.git
 cd biblioteca-microservicios
 
+### ✅ Nueva Estructura que contempla un Login y un Front basico en HTML, CSS, y JavaScript
+
+biblioteca-universitaria/
+│
+├── auth-service/                      # Nuevo microservicio para login y JWT
+│   ├── src/
+│   │   └── main/java/com/biblioteca/auth/
+│   │       ├── controller/           # AuthController.java
+│   │       ├── model/                # Usuario.java
+│   │       ├── repository/           # UsuarioRepository.java
+│   │       ├── service/              # UserDetailsServiceImpl.java
+│   │       ├── security/             # JwtUtil.java, SecurityConfig.java
+│   │       └── AuthServiceApp.java   # Clase principal
+│   └── resources/
+│       └── application.properties
+│
+├── usuarios-service/
+│   └── ...                           # CRUD de usuarios (como ya tienes)
+│
+├── libros-service/
+│   └── ...                           # CRUD de libros
+│
+├── prestamos-service/
+│   └── ...                           # CRUD de préstamos
+│
+├── frontend/                         # Frontend básico con HTML/JS
+│   ├── login.html                    # Página de login y listado de libros
+│   └── css/
+│       └── estilos.css               # (opcional)
+│
+├── .gitignore
+├── README.md
+├── proyecto-kanban.png              # Captura de tablero Kanban Scrum
+├── github-evidencias/               # Carpeta con capturas de GitHub
+│   ├── commits.png
+│   ├── pull-requests.png
+│   ├── branches.png
+│   └── ...
+│
+└── docker-compose.yml (opcional)    # Para orquestar los servicios con contenedores
+
