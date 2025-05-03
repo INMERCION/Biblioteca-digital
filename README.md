@@ -79,7 +79,8 @@ Cada carpeta representa un microservicio independiente, con su propio:
 git clone https://github.com/tuusuario/biblioteca-microservicios.git
 cd biblioteca-microservicios
 
-### ✅ Nueva Estructura que contempla un Login y un Front basico en HTML, CSS, y JavaScript
+📁 Estructura del Proyecto Completa
+Nueva Estructura que contempla un Login y un Front basico en HTML, CSS, y JavaScript
 
 biblioteca-universitaria/
 │
@@ -120,3 +121,23 @@ biblioteca-universitaria/
 │
 └── docker-compose.yml (opcional)    # Para orquestar los servicios con contenedores
 
+
+🧩 Interacción entre servicios
+text
+Copiar
+Editar
+[login.html] → [auth-service] → 🔐 Genera token JWT
+         ↓
+[libros-service] ←🔒 Token
+[usuarios-service] ←🔒 Token
+[prestamos-service] ←🔒 Token
+
+
+🔗 Endpoints clave
+POST /api/v1/auth/login → login (retorna JWT)
+
+GET /api/v1/libros → protegido (requiere JWT)
+
+GET /api/v1/usuarios → protegido (requiere JWT)
+
+GET /api/v1/prestamos → protegido (requiere JWT)
